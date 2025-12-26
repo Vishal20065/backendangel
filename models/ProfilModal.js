@@ -16,6 +16,7 @@ const profitSchema = new mongoose.Schema({
     },
     
   date: { type: String },
+    datefilter: { type: String },
   equity: { type: String },
   realisedPl: { type: Number,set: toTwoDecimals,
     get: toTwoDecimals },
