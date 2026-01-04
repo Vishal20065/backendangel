@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes.js";
-import profitRoutes from "./routes/profitRoutes.js";
-import fundAddRoutes from "./routes/fundAddRoutes.js";
-import fundWithdrawRoutes from "./routes/fundWithdrawRoutes.js";
-import profileRoutes from "./routes/profileRoutes.js";
-import order1Routes from "./routes/order1Routes.js";
-import order2Routes from "./routes/order2Routes.js";
+// import userRoutes from "./routes/userRoutes.js";
+// import profitRoutes from "./routes/profitRoutes.js";
+// import fundAddRoutes from "./routes/fundAddRoutes.js";
+// import fundWithdrawRoutes from "./routes/fundWithdrawRoutes.js";
+// import profileRoutes from "./routes/profileRoutes.js";
+// import order1Routes from "./routes/order1Routes.js";
+// import order2Routes from "./routes/order2Routes.js";
 
 
 
