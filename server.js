@@ -13,7 +13,7 @@ import order2Routes from "./routes/order2Routes.js";
 
 
 // import QRCode from "qrcode";
-
+// server
 
 
 
