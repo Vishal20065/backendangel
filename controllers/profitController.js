@@ -88,9 +88,20 @@ export const getTotals = async (req, res) => {
   try {
 
    const adminId  = req.params.id; // or req.query / req.user._id
+
+
     if (!adminId) {
       return res.status(400).json({ message: "Admin ID is required" });
     }
+
+ const filterDate = await Profit.findOne({
+  admin: adminId,
+  datefilter: { $exists: true, $ne: null }
+});
+
+
+// console.log("filterDate", filterDate);
+
 
     const profits = await Profit.aggregate([
       {
@@ -107,6 +118,8 @@ export const getTotals = async (req, res) => {
       },
     ]);
 
+    // console.log(profits)
+
     if (profits.length === 0) {
       return res.json({
         totalRealisedPl: 0.00,
@@ -121,7 +134,8 @@ export const getTotals = async (req, res) => {
     res.json({
       totalRealisedPl: toTwoDecimals(totalRealisedPl),
       totalCharges: toTwoDecimals(totalCharges),
-      totalNetRealised: toTwoDecimals(totalNetRealised)
+      totalNetRealised: toTwoDecimals(totalNetRealised),
+      datefilter:filterDate?.datefilter
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
